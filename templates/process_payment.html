@@ -1,0 +1,208 @@
+		
+<!doctype html>
+<html class="no-js" lang="en">
+    {% load static %}
+    
+<!-- Mirrored from live.envalab.com/html/zooks/theme/zoo/rate.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Apr 2022 05:24:22 GMT -->
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>wildconserve</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href='{% static "images/favicon.ico"%}'> 
+    <link rel="apple-touch-icon" href='{% static "images/favicon.ico"}'>
+    <!-- Place favicon.ico in the root directory -->
+    <!-- all css here -->
+    <!-- bootstrap v3.3.6 css -->
+    <link rel="stylesheet" href='{% static "css/bootstrap.min.css" %}'>
+    <!-- flaticon css -->
+    <link rel="stylesheet" href='{% static "css/flaticon.css" %}'>
+    <!-- animate css -->
+    <link rel="stylesheet" href='{% static "css/animate.css" %}'>
+    <!-- jquery-ui.min css -->
+    <link rel="stylesheet" href='{% static "css/jquery-ui.min.css" %}'>
+    <!-- meanmenu css -->
+    <link rel="stylesheet" href='{% static "css/meanmenu.min.css" %}'>
+    <!-- owl.carousel css -->
+    <link rel="stylesheet" href='{% static "css/owl.carousel.css" %}'>
+    <!-- magnific-popup css -->
+    <link rel="stylesheet" href='{% static "css/magnific-popup.css" %}'>
+    <!-- font-awesome css -->
+    <link rel="stylesheet" href='{% static "css/font-awesome.min.css" %}'>
+    <!-- style css -->
+    <link rel="stylesheet" href='{% static "style.css" %}'>
+    <!-- responsive css -->
+    <link rel="stylesheet" href='{% static "css/responsive.css" %}'>
+    <!-- modernizr css -->
+    <script src='{% static "js/vendor/modernizr-2.8.3.min.js" %}'></script>
+</head>
+<body>
+    <!-- Header Start Here -->
+    <header>
+    <!-- Header Start Here -->
+        <div class="container">
+            <div class="row">
+                <div class="header-top">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                        <div class="logo-area">
+                            <a href="index.html">
+                                <img src='{% static "images/log.png" %}' alt="#">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                        <div class="header-top-right">
+                            <nav>
+                                <ul>
+                                    {% if user.is_authenticated %}
+                                    <li><a href="{% url 'pro' %}">hi {{user.username}}</a></li>
+                                    <li><a href="{% url 'lgt' %}">logout</a></li>
+                                    {% else %}
+                                    <li><a href="{% url 'reg' %}">Registration</a></li>
+                                    <li><a href="{% url 'log' %}">Login</a></li>
+                                    {% endif %}
+                                    
+                                    <li>
+                                        <form action="{% url 'ser' %}" method="Post">
+                                            {% csrf_token %}
+                                     <input type="text"  name="ser" class="form-control" placeholder="Search Here...">
+                                     <i class="fa fa-search" aria-hidden="true"></i>
+                                    </form>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-header">
+                    <nav>
+                        <ul>
+                            <li class="active"><a href="index.html">Home</a></li>
+                            <li class="active"><a href="{% url 'adp' %}">AddPost</a></li>
+                            <li><a href="{% url 'adp' %}">wildlife Blog </a></li>
+                            <li><a href="{% url 'wild' %}">Wildopedia</a></li>
+                            <li><a href="{% url 'know' %}">FAQ</a></li>
+                            <li><a href="{% url 'cont' %}">helpdesk</a></li>
+                            <li><a href="{% url 'rules' %}">ToD</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        
+            <div class="mobile-menu-area">
+                <div class="container">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="mobile-menu">
+                          <nav id="dropdown">
+                            <ul>
+                                <li class="active"><a href="index.html">Home</a></li>
+                                <li><a href="know.html">wildlife blog</a></li>
+                                <li><a href="rules.html">wildopedia</a></li>
+                                <li><a href="faq.html">Faq</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                          </nav>
+                        </div>          
+                      </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="search-box-area">
+                <div class="container">
+                      <div class="row">                          
+                          <div class="search-form">
+                              <form>
+                                  <div class="col-sm-12">
+                                      <div class="form-group">
+                                          <input type="text" class="form-control" placeholder="Search Here...">
+                                          <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                                      </div>
+                                  </div>
+                              </form>
+                          </div>
+                      </div>
+                  </div>              
+            </div>
+        </header>
+
+		
+		
+		
+		<div class="breadcumb-area two">
+            <div class="container">
+                <div class="row">
+                    <div class="breadcumb">
+                        <h2 style="color:yellow">Welcome to payment system</h2>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+		<br><br><br><br>
+       
+		<div class="row">
+			<div class="col-md-6 mx-auto my-5 p-5 text-center"  style="box-shadow:0px 0px 10px gray;">
+				<h2>CLICK HERE TO CONTINUE</h2><br>
+				{{form.render}}
+			</div>
+		</div><br> <br>
+
+		<div class="ticket-area">
+			<div class="container">
+			 
+		  <div class="twitter-post-area">
+			  <div class="container-fluid acurate">
+				  <div class="row">
+					  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						  <div class="single-post">
+							  <a href="#"><img src='{% static "images/post/1.jpg" %}' alt=""></a>
+							  
+  
+						  </div>
+						  <div class="single-post">
+							  <a href="#"><img src='{% static "images/post/2.jpg" %}' alt=""></a>
+							  
+						  </div>
+						  <div class="single-post">
+							  <a href="#"><img src='{% static "images/post/3.jpg" %}' alt=""></a>
+							  
+						  </div>
+						  <div class="single-post">
+							  <a href="#"><img src='{% static "images/post/4.jpg" %}' alt=""></a>
+							  
+						  </div>
+						  <div class="single-post">
+							  <a href="#"><img src='{% static "images/post/5.jpg" %}' alt=""></a>
+							  
+						  </div>  
+					  </div>
+				  </div>
+			  </div>
+		  </div>
+		  
+		  <script src="js/vendor/jquery-1.12.0.min.js"></script>
+		  <!-- bootstrap js -->
+		  <script src="js/bootstrap.min.js"></script>
+		  <!-- owl.carousel js -->
+		  <script src="js/owl.carousel.min.js"></script>
+		  <!-- meanmenu js -->
+		  <script src="js/jquery.meanmenu.js"></script>
+		  <!-- jquery-ui js -->
+		  <script src="js/jquery-ui.min.js"></script>
+		  <!-- wow js -->
+		  <script src="js/wow.min.js"></script>
+		  <!-- magnific-popup js -->
+		  <script src="js/jquery.magnific-popup.min.js"></script>
+		  <!-- plugins js -->
+		  <script src="js/plugins.js"></script>
+		  <!-- main js -->
+		  <script src="js/main.js"></script>
+
+		
+          </body>
+
+<!-- Mirrored from hasnaadesign.com/Pranayama/404.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 17 Mar 2021 12:25:32 GMT -->
+</html>

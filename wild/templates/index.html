@@ -1,0 +1,738 @@
+<!doctype html>
+<html class="no-js" lang="en">
+{% load static %}
+    
+<!-- Mirrored from live.envalab.com/html/zooks/theme/zoo/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Apr 2022 05:22:34 GMT -->
+<head>
+    
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>wildconserve</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/x-icon" href='{% static "images/favicon.ico"%}'> 
+        <link rel="apple-touch-icon" href='{% static "images/favicon.ico"}'>
+        <!-- Place favicon.ico in the root directory -->
+        <!-- all css here -->
+        <!-- bootstrap v3.3.6 css -->
+        <link rel="stylesheet" href='{% static "css/bootstrap.min.css" %}'>
+        <!-- flaticon css -->
+        <link rel="stylesheet" href='{% static "css/flaticon.css" %}'>
+        <!-- animate css -->
+        <link rel="stylesheet" href='{% static "css/animate.css" %}'>
+        <!-- jquery-ui.min css -->
+        <link rel="stylesheet" href='{% static "css/jquery-ui.min.css" %}'>
+        <!-- meanmenu css -->
+        <link rel="stylesheet" href='{% static "css/meanmenu.min.css" %}'>
+        <!-- owl.carousel css -->
+        <link rel="stylesheet" href='{% static "css/owl.carousel.css" %}'>
+        <!-- magnific-popup css -->
+        <link rel="stylesheet" href='{% static "css/magnific-popup.css" %}'>
+        <!-- font-awesome css -->
+        <link rel="stylesheet" href='{% static "css/font-awesome.min.css" %}'>
+        <!-- style css -->
+        <link rel="stylesheet" href='{% static "style.css" %}'>
+        <!-- responsive css -->
+        <link rel="stylesheet" href='{% static "css/responsive.css" %}'>
+        <!-- modernizr css -->
+        <script src='{% static "js/vendor/modernizr-2.8.3.min.js" %}'></script>
+    </head>
+    <body>
+        <!-- Header Start Here -->
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="header-top">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                            <div class="logo-area">
+                                <a href="index.html">
+                                    <img src='{% static "images/log.png" %}' alt="#">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                            <div class="header-top-right">
+                                <nav>
+                                    <ul>
+                                        {% if user.is_authenticated %}
+                                        <li><a href="{% url 'pro' %}">hi {{user.username}}</a></li>
+                                        <li><a href="{% url 'lgt' %}">logout</a></li>
+                                        {% else %}
+                                        <li><a href="{% url 'reg' %}">Registration</a></li>
+                                        <li><a href="{% url 'log' %}">Login</a></li>
+                                        {% endif %}
+                                        
+                                        <li>
+                                            <form action="{% url 'ser' %}" method="Post">
+                                                {% csrf_token %}
+                                         <input type="text"  name="ser" class="form-control" placeholder="Search Here...">
+                                         <i class="fa fa-search" aria-hidden="true"></i>
+                                        </form>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-header">
+                        <nav>
+                            <ul>
+                                <li class="active"><a href="index.html">Home</a></li>
+                                <li class="active"><a href="{% url 'adp' %}">AddPost</a></li>
+                                <li><a href="{% url 'wild' %}">wildlife Blog </a></li>
+                                <li><a href="{% url 'wild' %}">Wildopedia</a></li>
+                                <li><a href="{% url 'know' %}">FAQ</a></li>
+                                <li><a href="{% url 'cont' %}">helpdesk</a></li>
+                                <li><a href="{% url 'rules' %}">ToD</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-menu-area">
+                <div class="container">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="mobile-menu">
+                          <nav id="dropdown">
+                            <ul>
+                                <li class="active"><a href="index.html">Home</a></li>
+                                <li><a href="adp">wildlife Blog</a></li>
+                                <li><a href="rules.html">wildopedia</a></li>
+                                <li><a href="faq.html">FAQ</a></li>
+                                <li><a href="contact.html"> Contact</a></li>
+                            </ul>
+                          </nav>
+                        </div>          
+                      </div>
+                    </div>
+                </div>
+            </div> 
+           
+        </header>
+        <!-- Header End Here -->
+        <!--564654-->  
+        <!-- Slider Area Start Here -->
+        <div class="slider-area">
+            <div class="slide-one">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <h2 class="span3 span33 wow bounceInDown center" style="visibility: visible; animation-delay: 0.1s; animation-name: bounceInDown;">Rooar...</h2>
+                            <p data-wow-delay="0.2s" class="span3 wow bounceIn center" style="visibility: visible; animation-delay: 0.2s; animation-name: bounceIn;">welcome wildlife</p>
+                            <a href="#" data-wow-delay="0.3s" class="span3 wow bounceInDown center" style="visibility: visible; animation-delay: 0.3s; animation-name: bounceInDown;">Wildopedia</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-two">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <h2 data-wow-delay="0.3s" class="span3 wow bounceInUp center" style="visibility: visible; animation-delay: 0.3s; animation-name: bounceInUp;">Rooar...
+                            
+                            </h2>
+                            <p>welcome wildlife</p>
+                            <a href="#">Wildopedia</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-dot">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="slide-dots">
+                            <a class="slide-dots-next"></a>
+                            <a class="slide-dots-prev"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Slider Area End Here -->
+        <!-- Home Services Start Here -->
+        <div class="home-services-area">
+            <div class="container">
+                <div class="row">
+                    {% for i in ckey %}
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="single-services">
+                            <h2>{{i.cat_head}}</h2>
+                            <div class="services-image">
+                                <a href="#"><img src='{{i.bimage.url}}' style="height:360px" alt=""></a>
+                                <div class="overley">
+                                    <div class="services-details">
+                                        <div class="services-botton">
+                                            <a href="{{i.id}}">Read more </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                 
+                </div>
+            </div>
+        </div>
+
+              
+                
+              </div>
+            </div>
+            </div>
+        </div>
+        <!-- Our live camp end Here -->
+        <!-- Our camp Under Area Start Here -->
+      <!--  <div class="under-camp-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="single-under-camp">
+                            <div class="image">
+                                <span class="camp-image"><img src='{% static "images/camp/5.jpg" %}' alt=""/></span>
+                                <div class="price-camp">
+                                    <img src='{% static "images/camp/price.png" %}' alt=""/>
+                                    <div class="content-price">
+                                        <h2><span>Only</span> <span>$49</span></h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <h4><a href="#">Join the Club & Save Money!</a></h4>
+                                <p>Enjoy the zoo all year round.</p>
+                                <div class="read-more">
+                                    <a href="#">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  !-->
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                        <div class="single-under-camp">
+                            <div class="image">
+                                <span class="camp-image"><img src='{% static "images/camp/6.jpg" %}' alt=""/></span>
+                            </div>
+                            <div class="details">
+                                <h4><a href="#">Explore Our Map</a></h4>
+                                <p>Search for animals or more info.</p>
+                                <div class="read-more">
+                                    <a href="#">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                        <div class="single-under-camp">
+                            <div class="image">
+                                <span class="camp-image"><img src='{% static "images/camp/7.jpg" %}' alt=""/></span>
+                            </div>
+                            <div class="details">
+                                <h4><a href="#">Face Painting</a></h4>
+                                <p>Get face painted at the zoo!</p>
+                                <div class="read-more">
+                                    <a href="#">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Our camp Under Area End Here -->
+        <!-- About Us Area Start Here -->
+        <div class="about-us-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="about-content">
+                            <h2>Get closer to the wonders<br/> of the natural world.</h2>
+                            <ul>
+                                <li><img src='{% static "images/footer/icon.png" %}' alt="" /> 100s of animals – including giraffes, tigers & penguins</li>
+                                <li><img src='{% static "images/footer/icon.png" %}' alt="" /> 140 acre park, train and 3 adventure playgrounds</li>
+                                <li><img src='{% static "images/footer/icon.png" %}' alt="" /> Daily talks and animal feeds + cafés and gifts</li>
+                            </ul>
+                            <div class="about-botton">
+                                <ul>
+                                    <li><a href="faq.html">Check our Faqs</a></li>
+                                    <li><a href="rules.html">Check our blogs</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About Us Area End Here -->
+        <!-- Our Animal Start Here -->
+        <div class="our-animal-area">
+            <div class="container">
+                <div class="row">                    
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                    <div class="section-title">
+                        <h2>Our Animals</h2>
+                    </div>
+                </div>
+                </div>
+                <div class="row">
+                    {% for i in data %}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="pricing-plan">
+                            <div class="pricing-head">
+                                <div class="pricing-title">
+                                    <h2>{{i.p_name}}</h2>
+                                </div>
+                                <div class="pricing-price">
+                                    <p><span class="up">&#8377;</span> <span class="price">{{i.p_price}}</span> <span class="down">/12 Month</span></p>
+                                </div>
+                            </div>
+                            <ul class="pricing-features list-unstyled text-justify">
+                            <p>{{i.p_desc}}</p>
+                            </ul>
+                            <!--<ul class="pricing-features list-unstyled">
+                                <li>Starter Pack Included</li>
+                                <li>Personal Trainer</li>
+                                <li>Special Class</li>
+                                <li>Free Tutorials</li>
+                                <li>Group Training</li>
+                            </ul>-->
+                            
+                            <div class="pricing-btn">
+                                <form action="{% url 'process_payment' %}" method="POST" >
+                                    {% csrf_token %}
+                                    <input type="hidden" value="{{i.id}}" name="pid">
+                                    <input type="hidden" value="1" name="qty">
+                                    <button class="main-btn">proceed payment</button>
+                                </form>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    {% endfor %}  
+                    </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Our Animal End Here -->
+        <!-- Our Latest Video Area Start Here -->
+        <div class="our-latest-video-area">
+            <div class="container">
+                <div class="row">
+                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                        <div class="section-title">
+                            <h2>Latest Videos</h2>
+                            <p>Watch clips featuring animals, keepers, and more!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">          
+                        <div class="video-tab">
+                           <!-- Nav tabs -->
+                           <ul class="nav nav-tabs" role="tablist">
+                             <li role="presentation" class="active">
+                                <a href="#home" aria-controls="home" role="tab" data-toggle="tab">
+                                    <img src='{% static "images/video/1.jpg" %}' alt="">
+                                </a>
+                             </li>
+                             <li role="presentation">
+                                <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">
+                                    <img src='{% static "images/video/2.jpg" %}' alt="">
+                                </a>
+                             </li>
+                             <li role="presentation">
+                                <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">
+                                    <img src='{% static "images/video/3.jpg" %}' alt="">
+                                </a>
+                             </li>
+                             <li role="presentation">
+                                <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">
+                                    <img src='{% static "images/video/4.jpg" %}' alt="">
+                                </a>
+                             </li>
+                             <li role="presentation">
+                                <a href="#video1" aria-controls="settings" role="tab" data-toggle="tab">
+                                    <img src='{% static "images/video/5.jpg" %}' alt="">
+                                </a>
+                             </li>
+                             <li role="presentation">
+                                <a href="#video2" aria-controls="settings" role="tab" data-toggle="tab">
+                                    <img src='{% static "images/video/6.jpg" %}' alt="">
+                                </a>
+                             </li>
+                           </ul>  
+                        </div>                    
+                     </div>
+                </div>
+            </div>
+        </div>
+        <!-- Our Latest Video Area End Here -->
+        <!-- Our Video Content Area Start Here -->
+        <div class="our-video-content-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <!-- Tab panes -->
+                        <div class="row tab-content">
+                          <div role="tabpanel" class="tab-pane active" id="home">
+                               <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 videos">
+                                   <div class="single-video">
+                                       <iframe width="558" height="365" src='{% static "https://www.youtube.com/embed/qDyoNgRW3ik" %}'allowfullscreen></iframe>
+                                       <h3><a href="#">Teaching the dolphins show</a></h3>
+                                   </div>
+                               </div>
+                               <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 videos">
+                                   <div class="single-video">
+                                       <iframe width="558" height="365" src='{% static "https://www.youtube.com/embed/wvWvbRZ7wNE" %}' allowfullscreen></iframe>
+                                       <h3><a href="#">Lovely video with baby tiger eating</a></h3>
+                                   </div>
+                               </div>
+                          </div>
+                          <div role="tabpanel" class="tab-pane" id="profile">
+                               <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 videos">
+                                   <div class="single-video">
+                                       <iframe width="558" height="365" src='{% static "https://www.youtube.com/embed/M7Otut7A_jE" %}' allowfullscreen></iframe>
+                                       <h3><a href="#">Teaching the dolphins show</a></h3>
+                                   </div>
+                               </div>
+                               <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 videos">
+                                   <div class="single-video">
+                                       <iframe width="558" height="365" src='{% static "https://www.youtube.com/embed/tJm8InmIH4I" %}' allowfullscreen></iframe>
+                                       <h3><a href="#">Lovely video with baby tiger eating</a></h3>
+                                   </div>
+                               </div>
+                          </div>
+                          <div role="tabpanel" class="tab-pane" id="messages">
+                               <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 videos">
+                                   <div class="single-video">
+                                       <iframe width="558" height="365" src='{% static "https://www.youtube.com/embed/qDyoNgRW3ik" %}' allowfullscreen></iframe>
+                                       <h3><a href="#">Teaching the dolphins show</a></h3>
+                                   </div>
+                               </div>
+                               <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 videos">
+                                   <div class="single-video">
+                                       <iframe width="558" height="365" src='{% static "https://www.youtube.com/embed/wvWvbRZ7wNE" %}' allowfullscreen></iframe>
+                                       <h3><a href="#">Lovely video with baby tiger eating</a></h3>
+                                   </div>
+                               </div>
+                          </div>
+                          <div role="tabpanel" class="tab-pane" id="settings">
+                               <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 videos">
+                                   <div class="single-video">
+                                       <iframe width="558" height="365" src='{% static "https://www.youtube.com/embed/M7Otut7A_jE" %}' allowfullscreen></iframe>
+                                       <h3><a href="#">Teaching the dolphins show</a></h3>
+                                   </div>
+                               </div>
+                               <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 videos">
+                                   <div class="single-video">
+                                       <iframe width="558" height="365" src='{% static "https://www.youtube.com/embed/tJm8InmIH4I" %}' allowfullscreen></iframe>
+                                       <h3><a href="#">Lovely video with baby tiger eating</a></h3>
+                                   </div>
+                               </div>
+                          </div>
+                          <div role="tabpanel" class="tab-pane" id="video1">
+                               <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 videos">
+                                   <div class="single-video">
+                                       <iframe width="558" height="365" src='{% static "https://www.youtube.com/embed/qDyoNgRW3ik" %}' allowfullscreen></iframe>
+                                       <h3><a href="#">Teaching the dolphins show</a></h3>
+                                   </div>
+                               </div>
+                               <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 videos">
+                                   <div class="single-video">
+                                       <iframe width="558" height="365" src='{% static "https://www.youtube.com/embed/wvWvbRZ7wNE" %}' allowfullscreen></iframe>
+                                       <h3><a href="#">Lovely video with baby tiger eating</a></h3>
+                                   </div>
+                               </div>
+                          </div>
+                          <div role="tabpanel" class="tab-pane" id="video2">
+                               <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 videos">
+                                   <div class="single-video">
+                                       <iframe width="558" height="365" src='{% static "https://www.youtube.com/embed/M7Otut7A_jE" %}' allowfullscreen></iframe>
+                                       <h3><a href="#">Teaching the dolphins show</a></h3>
+                                   </div>
+                               </div>
+                               <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 videos">
+                                   <div class="single-video">
+                                       <iframe width="558" height="365" src="https://www.youtube.com/embed/tJm8InmIH4I" allowfullscreen></iframe>
+                                       <h3><a href="#">Lovely video with baby tiger eating</a></h3>
+                                   </div>
+                               </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="save-the-lion-area">
+                            <h2>Save The Lions!</h2>
+                            <p>Africa Campaign!</p>
+                            <div class="button">
+                                <a href="#">Donate Just $10</a>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+                <div class="row latest-news">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                        <div class="section-title">
+                            <h2>Latest News</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="single-news-area">
+                            <div class="media">
+                              <div class="pull-left">
+                                <a href="#">
+                                  <img class="media-object" src='{% static "images/blog/1.png" %}' alt="Generic placeholder image">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">Rowan: an orangutan known & loved</a></h4>
+                                <p>It is with heavy hearts that we share all the news today: our sweet fellow, Rowan, has passed away.</p>
+                                <div class="read-more">
+                                    <a href="#">Read Article</a>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="single-news-area">
+                            <div class="media">
+                              <div class="pull-left">
+                                <a href="#">
+                                  <img class="media-object" src='{% static "images/blog/2.png" %}' alt="Generic placeholder image">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">Contrast for color of poison dart frogs</a></h4>
+                                <p>Although able to avoid most predation with their stunning coloration, some poison dart frogs are threatened.</p>
+                                <div class="read-more">
+                                    <a href="#">Read Article</a>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>                      
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                        <div class="all-news">
+                            <a href="#">Check All News</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Our Video Content Area End Here -->
+        <!-- wildlife Contact Start Here -->
+        <div class="zooks-connact-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                        <div class="section-title">
+                            <h2>Wildlife</h2>
+                        </div>
+                        <div class="zooks-social-connect-area">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                        <p>The truth is that we will never save wildlife by killing it.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Zooks Contact End Here -->
+        <!-- Twiiter Post Area Start Here -->
+        <div class="twitter-post-area">
+            <div class="container-fluid acurate">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="single-post">
+                            <a href="#"><img src='{% static "images/post/1.jpg" %}' alt=""></a>
+                            
+
+                        </div>
+                        <div class="single-post">
+                            <a href="#"><img src='{% static "images/post/2.jpg" %}' alt=""></a>
+                            
+                        </div>
+                        <div class="single-post">
+                            <a href="#"><img src='{% static "images/post/3.jpg" %}' alt=""></a>
+                            
+                        </div>
+                        <div class="single-post">
+                            <a href="#"><img src='{% static "images/post/4.jpg" %}' alt=""></a>
+                            
+                        </div>
+                        <div class="single-post">
+                            <a href="#"><img src='{% static "images/post/5.jpg" %}' alt=""></a>
+                            
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Twiiter Post Area End Here -->
+        <!-- Footer Start Here -->
+       <!-- <footer>
+            <div class="main-footer">
+                <div class="container">
+                    <div class="row">
+                       <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                           <div class="widget">
+                               <h2 class="widget-title">Explore</h2>
+                               <ul>
+                                   <li><a href="know.html"><img src='{% static "images/footer/icon.png" %}' alt=""> Zooks Experiences</a></li>
+                                   <li><a href="plan.html"><img src='{% static "images/footer/icon.png" %}' alt=""> Plan Your Day</a></li>
+                                   <li><a href="rate.html"><img src='{% static "images/footer/icon.png" %}' alt=""> Rates & Bookings</a></li>
+                                   <li><a href="contact.html"><img src='{% static "images/footer/icon.png" %}' alt=""> How to Get Here</a></li>
+                                   <li><a href="sponser.html"><img src='{% static "images/footer/icon.png" %}' alt=""> Animal Sponsor</a></li>
+                               </ul>
+                           </div>
+                       </div> 
+                       <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                           <div class="widget">
+                               <h2 class="widget-title">Tweets <span>by @zookszoo</span></h2>
+                               <ul>
+                                   <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i><p>Checkout my latest item Themeforest by clicking on this: <span class="widget-span-link">https://ghd67nG...</span><br/><span class="widget-span-hrs">3 hrs ago</span></p></a></li>
+                                   <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i><p>Make sure and checkout my template @themeforest having an awesome look <span class="widget-span-link">https://54FhjEe...</span><br/><span class="widget-span-hrs">5 hrs ago</span></p></a></li>
+                               </ul>
+                           </div>
+                       </div> 
+                       <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                           <div class="widget">
+                               <h2 class="widget-title">Our Gallery</h2>
+                                <ul class="gallery">
+                                    <li><a href="images/gellary/1.png" ><img src='{% static "images/gellary/1.png" %}' alt=""></a></li>
+                                    <li><a href="images/gellary/2.png" ><img src='{% static "images/gellary/2.png" %}' alt=""></a></li>
+                                    <li><a href="images/gellary/3.png" ><img src='{% static "images/gellary/3.png" %}' alt=""></a></li>
+                                    <li><a href="images/gellary/4.png" ><img src='{% static "images/gellary/4.png" %}' alt=""></a></li>
+                                    <li><a href="images/gellary/5.png" ><img src='{% static "images/gellary/5.png" %}' alt=""></a></li>
+                                    <li><a href="images/gellary/6.png" ><img src='{% static "images/gellary/6.png" %}' alt=""></a></li>
+                                </ul>
+                           </div>
+                       </div> 
+                       <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                           <div class="widget">
+                               <h2 class="widget-title">Sponsors</h2>
+                                <ul class="gallery-sp">
+                                    <li>
+                                        <a href="sponser.html">
+                                            <img src='{% static "images/sponser/1.png" %}' alt="" class="normal-sp">
+                                            <img src='{% static "images/sponser/1h.png" %}' alt="" class="hover-sp">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="sponser.html">
+                                            <img src='{% static "images/sponser/2.png" %}' alt="" class="normal-sp">
+                                            <img src='{% static "images/sponser/2h.png" %}' alt="" class="hover-sp">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="sponser.html">
+                                            <img src='{% static "images/sponser/3.png" %}' alt="" class="normal-sp">
+                                            <img src='{% static "images/sponser/3h.png" %}' alt="" class="hover-sp">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="sponser.html">
+                                            <img src='{% static "images/sponser/4.png" %}' alt="" class="normal-sp">
+                                            <img src='{% static "images/sponser/4h.png" %}' alt="" class="hover-sp">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="sponser.html">
+                                            <img src='{% static "images/sponser/5.png" %}' alt="" class="normal-sp">
+                                            <img src='{% static "images/sponser/5h.png" %}' alt="" class="hover-sp">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="sponser.html">
+                                            <img src='{% static "images/sponser/6.png" %}' alt="" class="normal-sp">
+                                            <img src='{% static "images/sponser/6h.png" %}' alt="" class="hover-sp">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="sponser.html">
+                                            <img src='{% static "images/sponser/7.png" %}' alt="" class="normal-sp">
+                                            <img src='{% static "images/sponser/7h.png" %}' alt="" class="hover-sp">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="sponser.html">
+                                            <img src='{% static "images/sponser/8.png" %}' alt="" class="normal-sp">
+                                            <img src='{% static "images/sponser/8h.png" %}' alt="" class="hover-sp">
+                                        </a>
+                                    </li>
+                                </ul>
+                           </div>
+                       </div> 
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="widget">
+                                <div class="footer-menu">
+                                    <ul>
+                                        <li><a href="rules.html">Zoo Rules</a></li>
+                                        <li><a href="faq.html">Frequently Asked Questions</a></li>
+                                        <li><a href="contact.html">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right">
+                            <div class="widget">
+                                <div class="copyright">
+                                    <p>Zooks <i class="flaticon-shapes-1"></i> by <a href="https://themeforest.net/user/envalab/portfolio?ref=envalab" target="_blank">ENVALAB</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>-->
+        <!-- Footer End Here -->
+         <!-- all js here -->
+        <!-- jquery latest version -->
+        <script src='{% static "js/vendor/jquery-1.12.0.min.js" %}'></script>
+        <!-- bootstrap js -->
+        <script src='{% static "js/bootstrap.min.js" %}'></script>
+        <!-- owl.carousel js -->
+        <script src='{% static "js/owl.carousel.min.js" %}'></script>
+        <!-- meanmenu js -->
+        <script src='{% static "js/jquery.meanmenu.js" %}'></script>
+        <!-- jquery-ui js -->
+        <script src='{% static "js/jquery-ui.min.js" %}'></script>
+        <!-- wow js -->
+        <script src='{% static "js/wow.min.js" %}'></script>
+        <!-- magnific-popup js -->
+        <script src='{% static "js/jquery.magnific-popup.min.js" %}'></script>
+        <!-- plugins js -->
+        <script src='{% static "js/plugins.js" %}'></script>
+        <!-- main js -->
+        <script src='{% static "js/main.js" %}'></script>
+        <script type="text/javascript">
+            (function(d, m){
+                var kommunicateSettings = 
+                    {"appId":"kommunicate-support","popupWidget":true,"automaticChatOpenOnNavigation":true};
+                var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+                s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+                var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+                window.kommunicate = m; m._globals = kommunicateSettings;
+            })(document, window.kommunicate || {});
+        /* NOTE: Use webserver to view HTML files as the real-time update will not work if you directly open the HTML file in the browser. */
+        </script>
+        
+    </body>
+
+<!-- Mirrored from live.envalab.com/html/zooks/theme/zoo/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Apr 2022 05:23:42 GMT -->
+</html>

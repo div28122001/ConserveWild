@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>wildconserve</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href='{% static "images/favicon.ico"%}'> 
+    <link rel="apple-touch-icon" href='{% static "images/favicon.ico"}'>
+    <!-- Place favicon.ico in the root directory -->
+    <!-- all css here -->
+    <!-- bootstrap v3.3.6 css -->
+    <link rel="stylesheet" href='{% static "css/bootstrap.min.css" %}'>
+    <!-- flaticon css -->
+    <link rel="stylesheet" href='{% static "css/flaticon.css" %}'>
+    <!-- animate css -->
+    <link rel="stylesheet" href='{% static "css/animate.css" %}'>
+    <!-- jquery-ui.min css -->
+    <link rel="stylesheet" href='{% static "css/jquery-ui.min.css" %}'>
+    <!-- meanmenu css -->
+    <link rel="stylesheet" href='{% static "css/meanmenu.min.css" %}'>
+    <!-- owl.carousel css -->
+    <link rel="stylesheet" href='{% static "css/owl.carousel.css" %}'>
+    <!-- magnific-popup css -->
+    <link rel="stylesheet" href='{% static "css/magnific-popup.css" %}'>
+    <!-- font-awesome css -->
+    <link rel="stylesheet" href='{% static "css/font-awesome.min.css" %}'>
+    <!-- style css -->
+    <link rel="stylesheet" href='{% static "style.css" %}'>
+    <!-- responsive css -->
+    <link rel="stylesheet" href='{% static "css/responsive.css" %}'>
+    <!-- modernizr css -->
+    <script src='{% static "js/vendor/modernizr-2.8.3.min.js" %}'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+
+<!-- start cssload-loader -->
+
+
+<!--======================================
+        START HEADER AREA
+    ======================================-->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="header-top">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                        <div class="logo-area">
+                            <a href="index.html">
+                                <img src='{% static "images/log.png" %}' alt="#">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                        <div class="header-top-right">
+                            <nav>
+                                <ul>
+                                    {% if user.is_authenticated %}
+                                    <li><a href="{% url 'pro' %}">hi {{user.username}}</a></li>
+                                    <li><a href="{% url 'lgt' %}">logout</a></li>
+                                    {% else %}
+                                    <li><a href="{% url 'reg' %}">Registration</a></li>
+                                    <li><a href="{% url 'log' %}">Login</a></li>
+                                    {% endif %}
+                                    
+                                    <li>
+                                        <form action="{% url 'ser' %}" method="Post">
+                                            {% csrf_token %}
+                                     <input type="text"  name="ser" class="form-control" placeholder="Search Here...">
+                                     <i class="fa fa-search" aria-hidden="true"></i>
+                                    </form>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-header">
+                    <nav>
+                        <ul>
+                            <li class="active"><a href="index.html">Home</a></li>
+                            <li class="active"><a href="{% url 'adp' %}">AddPost</a></li>
+                            <li><a href="{% url 'wild' %}">wildlife Blog </a></li>
+                            <li><a href="{% url 'wild' %}">Wildopedia</a></li>
+                            <li><a href="{% url 'know' %}">FAQ</a></li>
+                            <li><a href="{% url 'cont' %}">helpdesk</a></li>
+                            <li><a href="{% url 'rules' %}">ToD</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu-area">
+            <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="mobile-menu">
+                      <nav id="dropdown">
+                        <ul>
+                            <li class="active"><a href="index.html">Home</a></li>
+                            <li><a href="adp">wildlife Blog</a></li>
+                            <li><a href="rules.html">wildopedia</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="contact.html"> Contact</a></li>
+                        </ul>
+                      </nav>
+                    </div>          
+                  </div>
+                </div>
+            </div>
+        </div> 
+       
+    </header>
+<!--======================================
+        END HEADER AREA
+======================================-->
+
+<!--======================================
+        START HERO AREA
+======================================-->
+<section class="hero-area bg-white shadow-sm overflow-hidden pt-60px">
+    <span class="stroke-shape stroke-shape-1"></span>
+    <span class="stroke-shape stroke-shape-2"></span>
+    <span class="stroke-shape stroke-shape-3"></span>
+    <span class="stroke-shape stroke-shape-4"></span>
+    <span class="stroke-shape stroke-shape-5"></span>
+    <span class="stroke-shape stroke-shape-6"></span>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="hero-content d-flex align-items-center">
+                    <div class="icon-element shadow-sm flex-shrink-0 mr-3 border border-gray lh-55">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 0 24 24" width="32px" fill="#2d86eb"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19.43 12.98c.04-.32.07-.64.07-.98 0-.34-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.09-.16-.26-.25-.44-.25-.06 0-.12.01-.17.03l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.06-.02-.12-.03-.18-.03-.17 0-.34.09-.43.25l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98 0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.09.16.26.25.44.25.06 0 .12-.01.17-.03l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.06.02.12.03.18.03.17 0 .34-.09.43-.25l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zm-1.98-1.71c.04.31.05.52.05.73 0 .21-.02.43-.05.73l-.14 1.13.89.7 1.08.84-.7 1.21-1.27-.51-1.04-.42-.9.68c-.43.32-.84.56-1.25.73l-1.06.43-.16 1.13-.2 1.35h-1.4l-.19-1.35-.16-1.13-1.06-.43c-.43-.18-.83-.41-1.23-.71l-.91-.7-1.06.43-1.27.51-.7-1.21 1.08-.84.89-.7-.14-1.13c-.03-.31-.05-.54-.05-.74s.02-.43.05-.73l.14-1.13-.89-.7-1.08-.84.7-1.21 1.27.51 1.04.42.9-.68c.43-.32.84-.56 1.25-.73l1.06-.43.16-1.13.2-1.35h1.39l.19 1.35.16 1.13 1.06.43c.43.18.83.41 1.23.71l.91.7 1.06-.43 1.27-.51.7 1.21-1.07.85-.89.7.14 1.13zM12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
+                    </div>
+                    <h2 class="section-title fs-30">Settings</h2>
+                </div><!-- end hero-content -->
+            </div><!-- end col-lg-8 -->
+            <div class="col-lg-4">
+                <div class="hero-btn-box text-right py-3">
+                    <a href="{% url 'uprofile' %}" class="btn theme-btn theme-btn-outline theme-btn-outline-gray"><i class="la la-user mr-1"></i>View Profile</a>
+                </div>
+            </div><!-- end col-lg-4 -->
+        </div><!-- end row -->
+        <ul class="nav nav-tabs generic-tabs generic--tabs generic--tabs-2 mt-4" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="edit-profile-tab" data-toggle="tab" href="#edit-profile" role="tab" aria-controls="edit-profile" aria-selected="true">Edit Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="change-password-tab" data-toggle="tab" href="#change-password" role="tab" aria-controls="change-password" aria-selected="false">Change Password</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="email-settings-tab" data-toggle="tab" href="#email-settings" role="tab" aria-controls="email-settings" aria-selected="false">Email Settings</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="privacy-tab" data-toggle="tab" href="#privacy" role="tab" aria-controls="privacy" aria-selected="false">Privacy</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="delete-account-tab" data-toggle="tab" href="#delete-account" role="tab" aria-controls="delete-account" aria-selected="false">Delete Account</a>
+            </li>
+        </ul>
+    </div><!-- end container -->
+</section>
+<!--======================================
+        END HERO AREA
+======================================-->
+
+<!-- ================================
+         START USER DETAILS AREA
+================================= -->
+<hr>
+<br>
+<br>
+<hr>
+<script>
+    var loadFile = function(event) {
+        var image = document.getElementById('output');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    };
+    </script>
+<section class="user-details-area pt-40px pb-40px">
+    <div class="container">
+        <!-- end col-lg-9 -->
+        <section class="vh-100 gradient-custom">
+            <div class="container py-5 h-100">
+              <div class="row justify-content-center align-items-center h-100">
+                <div class="col-12 col-lg-9 col-xl-7">
+                  <div class="card shadow-2-strong card-registration" style="border-radius: 15px;background-color: rgba(255, 255, 255, 0.6);">
+                    <div class="card-body p-4 p-md-5">
+                      <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center font-weight-bold text-primary">Registration Form</h3>
+                      <form action ="{% url 'uprofile' %}" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+          
+                        <div class="row">
+
+                            
+                                <h1>update profile</h1>
+                                <hr>
+                
+                                          
+                                <input type="file"  accept="image/*" name="pimg" id="file"  onchange="loadFile(event)" style="display: none;">
+                                <label for="file" style="cursor: pointer;">Upload Image</label>
+                            <img id="output" width="200" />
+                           <div class="container">
+                          <div class="col-md-6 mb-4">
+                            
+                            <div class="form-outline">
+                              <input type="text" name="fn" value="{{disent.user.first_name}}" id="firstName" class="form-control form-control-lg" />
+                              <label class="form-label" for="firstName">First Name</label>
+                            </div>
+          
+                          </div>
+                        
+                        </div>
+                          
+                        <div class="row">
+                         <div class="col-md-6 mb-4 pb-2">
+                          <div class="form-outline">
+                            <input type="text" name="ln" value="{{disent.user.last_name}}" id="lastName" class="form-control form-control-lg" />
+                            <label class="form-label" for="lastName">Last Name</label>
+                          </div>
+                          
+                        </div>
+                          
+                          <div class="col-md-6 mb-4 pb-2">
+                             <div class="form-outline">
+                              <input type="email" name="em" value="{{disent.user.email}}" id="emailAddress" class="form-control form-control-lg" />
+                              <label class="form-label" for="emailAddress">Email</label>
+                            </div>
+                          </div>
+                          <div class="col-md-6 mb-4 pb-2">
+                            <div class="form-outline">
+                             <input type="tel" name="con" id="emailAddress" value="{{disent.cn}}"class="form-control form-control-lg" />
+                             <label class="form-label" for="emailAddress">Contact</label>
+                           </div>
+                         </div>
+                         <div class="col-md-6 mb-4 pb-2">
+                            <div class="form-outline">
+                             <input type="text" name="add" id="emailAddress" value="{{disent.address}}" class="form-control form-control-lg" />
+                             <label class="form-label" for="emailAddress">Address</label>
+                           </div>
+                         </div>
+                          
+                         
+                        <div class="mt-4 pt-2  text-center">
+                        <input class="btn btn-primary btn-lg" type="submit" value="Submit" />
+                        </div>
+          
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+        </section>
+            <!-- end col-lg-3 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end user-details-area -->
+<hr>
+<br>
+<br>
+<hr><hr>
+<br>
+<br>
+<hr>
+<!-- ================================
+         END USER DETAILS AREA
+================================= -->
+
+<!-- ================================
+         END FOOTER AREA
+================================= -->
+<div class="our-video-content-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <!-- Tab panes -->
+                <div class="row tab-content">
+                  <div role="tabpanel" class="tab-pane active" id="home">
+                       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 videos">
+                           <div class="single-video">
+                               <iframe width="558" height="365" src='{% static "https://www.youtube.com/embed/qDyoNgRW3ik" %}'allowfullscreen></iframe>
+                               <h3><a href="#">Teaching the dolphins show</a></h3>
+                           </div>
+                       </div>
+                       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 videos">
+                           <div class="single-video">
+                               <iframe width="558" height="365" src='{% static "https://www.youtube.com/embed/wvWvbRZ7wNE" %}' allowfullscreen></iframe>
+                               <h3><a href="#">Lovely video with baby tiger eating</a></h3>
+                           </div>
+                       </div>
+                  </div>
+                  <div role="tabpanel" class="tab-pane" id="profile">
+                       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 videos">
+                           <div class="single-video">
+                               <iframe width="558" height="365" src='{% static "https://www.youtube.com/embed/M7Otut7A_jE" %}' allowfullscreen></iframe>
+                               <h3><a href="#">Teaching the dolphins show</a></h3>
+                           </div>
+                       </div>
+                       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 videos">
+                           <div class="single-video">
+                               <iframe width="558" height="365" src='{% static "https://www.youtube.com/embed/tJm8InmIH4I" %}' allowfullscreen></iframe>
+                               <h3><a href="#">Lovely video with baby tiger eating</a></h3>
+                           </div>
+                       </div>
+                  </div>
+                  <div role="tabpanel" class="tab-pane" id="messages">
+                       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 videos">
+                           <div class="single-video">
+                               <iframe width="558" height="365" src='{% static "https://www.youtube.com/embed/qDyoNgRW3ik" %}' allowfullscreen></iframe>
+                               <h3><a href="#">Teaching the dolphins show</a></h3>
+                           </div>
+                       </div>
+                       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 videos">
+                           <div class="single-video">
+                               <iframe width="558" height="365" src='{% static "https://www.youtube.com/embed/wvWvbRZ7wNE" %}' allowfullscreen></iframe>
+                               <h3><a href="#">Lovely video with baby tiger eating</a></h3>
+                           </div>
+                       </div>
+                  </div>
+                  <div role="tabpanel" class="tab-pane" id="settings">
+                       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 videos">
+                           <div class="single-video">
+                               <iframe width="558" height="365" src='{% static "https://www.youtube.com/embed/M7Otut7A_jE" %}' allowfullscreen></iframe>
+                               <h3><a href="#">Teaching the dolphins show</a></h3>
+                           </div>
+                       </div>
+                       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 videos">
+                           <div class="single-video">
+                               <iframe width="558" height="365" src='{% static "https://www.youtube.com/embed/tJm8InmIH4I" %}' allowfullscreen></iframe>
+                               <h3><a href="#">Lovely video with baby tiger eating</a></h3>
+                           </div>
+                       </div>
+                  </div>
+                  <div role="tabpanel" class="tab-pane" id="video1">
+                       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 videos">
+                           <div class="single-video">
+                               <iframe width="558" height="365" src='{% static "https://www.youtube.com/embed/qDyoNgRW3ik" %}' allowfullscreen></iframe>
+                               <h3><a href="#">Teaching the dolphins show</a></h3>
+                           </div>
+                       </div>
+                       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 videos">
+                           <div class="single-video">
+                               <iframe width="558" height="365" src='{% static "https://www.youtube.com/embed/wvWvbRZ7wNE" %}' allowfullscreen></iframe>
+                               <h3><a href="#">Lovely video with baby tiger eating</a></h3>
+                           </div>
+                       </div>
+                  </div>
+                  <div role="tabpanel" class="tab-pane" id="video2">
+                       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 videos">
+                           <div class="single-video">
+                               <iframe width="558" height="365" src='{% static "https://www.youtube.com/embed/M7Otut7A_jE" %}' allowfullscreen></iframe>
+                               <h3><a href="#">Teaching the dolphins show</a></h3>
+                           </div>
+                       </div>
+                       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 videos">
+                           <div class="single-video">
+                               <iframe width="558" height="365" src="https://www.youtube.com/embed/tJm8InmIH4I" allowfullscreen></iframe>
+                               <h3><a href="#">Lovely video with baby tiger eating</a></h3>
+                           </div>
+                       </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="save-the-lion-area">
+                    <h2>Save The Lions!</h2>
+                    <p>Africa Campaign!</p>
+                    <div class="button">
+                        <a href="#">Donate Just $10</a>
+                    </div>
+                </div>
+            </div>                    
+        </div>
+        <div class="row latest-news">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                <div class="section-title">
+                    <h2>Latest News</h2>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="single-news-area">
+                    <div class="media">
+                      <div class="pull-left">
+                        <a href="#">
+                          <img class="media-object" src='{% static "images/blog/1.png" %}' alt="Generic placeholder image">
+                        </a>
+                      </div>
+                      <div class="media-body">
+                        <h4 class="media-heading"><a href="#">Rowan: an orangutan known & loved</a></h4>
+                        <p>It is with heavy hearts that we share all the news today: our sweet fellow, Rowan, has passed away.</p>
+                        <div class="read-more">
+                            <a href="#">Read Article</a>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="single-news-area">
+                    <div class="media">
+                      <div class="pull-left">
+                        <a href="#">
+                          <img class="media-object" src='{% static "images/blog/2.png" %}' alt="Generic placeholder image">
+                        </a>
+                      </div>
+                      <div class="media-body">
+                        <h4 class="media-heading"><a href="#">Contrast for color of poison dart frogs</a></h4>
+                        <p>Although able to avoid most predation with their stunning coloration, some poison dart frogs are threatened.</p>
+                        <div class="read-more">
+                            <a href="#">Read Article</a>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>                      
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                <div class="all-news">
+                    <a href="#">Check All News</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Our Video Content Area End Here -->
+<!-- wildlife Contact Start Here -->
+<div class="zooks-connact-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                <div class="section-title">
+                    <h2>Wildlife</h2>
+                </div>
+                <div class="zooks-social-connect-area">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+                <p>The truth is that we will never save wildlife by killing it.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Zooks Contact End Here -->
+<!-- Twiiter Post Area Start Here -->
+<div class="twitter-post-area">
+    <div class="container-fluid acurate">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="single-post">
+                    <a href="#"><img src='{% static "images/post/1.jpg" %}' alt=""></a>
+                    
+
+                </div>
+                <div class="single-post">
+                    <a href="#"><img src='{% static "images/post/2.jpg" %}' alt=""></a>
+                    
+                </div>
+                <div class="single-post">
+                    <a href="#"><img src='{% static "images/post/3.jpg" %}' alt=""></a>
+                    
+                </div>
+                <div class="single-post">
+                    <a href="#"><img src='{% static "images/post/4.jpg" %}' alt=""></a>
+                    
+                </div>
+                <div class="single-post">
+                    <a href="#"><img src='{% static "images/post/5.jpg" %}' alt=""></a>
+                    
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ================================
+          END FOOTER AREA
+================================= -->
+
+<!-- start back to top -->
+<div id="back-to-top" data-toggle="tooltip" data-placement="top" title="Return to top">
+    <i class="la la-arrow-up"></i>
+</div>
+<!-- end back to top -->
+
+<!-- Modal -->
+
+
+<script src='{% static "js/vendor/jquery-1.12.0.min.js" %}'></script>
+<!-- bootstrap js -->
+<script src='{% static "js/bootstrap.min.js" %}'></script>
+<!-- owl.carousel js -->
+<script src='{% static "js/owl.carousel.min.js" %}'></script>
+<!-- meanmenu js -->
+<script src='{% static "js/jquery.meanmenu.js" %}'></script>
+<!-- jquery-ui js -->
+<script src='{% static "js/jquery-ui.min.js" %}'></script>
+<!-- wow js -->
+<script src='{% static "js/wow.min.js" %}'></script>
+<!-- magnific-popup js -->
+<script src='{% static "js/jquery.magnific-popup.min.js" %}'></script>
+<!-- plugins js -->
+<script src='{% static "js/plugins.js" %}'></script>
+<!-- main js -->
+<script src='{% static "js/main.js" %}'></script>
+</body>
+
+</html>
